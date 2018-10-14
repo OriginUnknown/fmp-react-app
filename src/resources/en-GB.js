@@ -5,6 +5,28 @@ const APP_CONST = {
         }
     },
     HOME: {
+        MODAL: {
+            NEW_NOTE: {
+                title: "New note...",
+                description: "Add a new note and either save or cancel when you're done.",
+                notepad: {
+                    inputField: {
+                        inputLabel: "Title",
+                        labelValue: "Title:",
+                        placeholderText: "Enter title..."
+                    },
+                    textArea: {
+                        inputLabel: "Description",
+                        labelValue: "Description:",
+                        placeholderText: "Add note here..."
+                    },
+                    buttons: {
+                        ok: "Add note",
+                        cancel: "Cancel"
+                    }
+                }
+              }
+        },
         BUTTONS: {
             ADD_NOTE: "Add note..."
         }

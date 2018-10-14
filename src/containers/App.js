@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { v4 } from 'uuid';
 import APP_CONST from '../resources/en-GB';
 import Header from '../components/Navigation/Header';
 import ButtonItem from '../components/Button/Button';
 import Modal from '../components/Modal/Modal';
+import { newNote } from '../actions/NoteList.actions';
 
 import './App.css';
 
 class App extends Component {
+  state = {}
 
   openModalAddNote = () => {
-    console.log(`Open modal window to add note`);
+    this.props.newNote();
+  }
+
+  addNoteToStore = (newNoteToAdd) => {
+    let newNote = {
+      title: "Test title",
+      description: "Test description",
+      id: v4()
+    };
+    this.props.addNote(newNote);
+    this.hideModal();
   }
 
   hideModal = () => {
@@ -17,21 +31,19 @@ class App extends Component {
   }
 
   render() {
-    let modalContent = { title: "test title", description: "test description" };
-    let showModal = true;
     return (
       <div className="App">
       <Header title={APP_CONST.NAVIGATION.HEADER.title } />
         <div>
             <ButtonItem
               label={ APP_CONST.HOME.BUTTONS.ADD_NOTE }
-              clickAction={this.openModalAddNote}
+              clickAction={ this.openModalAddNote }
             />
           </div>
           <Modal
-          showModal={ showModal }
-          content={ modalContent }
-          closeModal={this.hideModal}>
+          showModal={ this.props.showModal}
+          content={ APP_CONST.HOME.MODAL[this.props.modal.contentKey] }
+          closeModal={ this.hideModal }>
           <p>hello modal</p>
           </Modal>
       </div>
@@ -39,4 +51,12 @@ class App extends Component {
   }
 }
 
-export default App;
+// to map state properties to the App this.props
+const mapStateToProps = state => state;
+const mapDispatchToProps = {
+  newNote
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
