@@ -5,7 +5,7 @@ import APP_CONST from '../resources/en-GB';
 import Header from '../components/Navigation/Header';
 import ButtonItem from '../components/Button/Button';
 import Modal from '../components/Modal/Modal';
-import { newNote } from '../actions/NoteList.actions';
+import { newNote, hideModal } from '../actions/NoteList.actions';
 
 import './App.css';
 
@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   hideModal = () => {
-    console.log('hide modal');
+    this.props.hideModal();
   }
 
   render() {
@@ -54,7 +54,7 @@ class App extends Component {
 // to map state properties to the App this.props
 const mapStateToProps = state => state;
 const mapDispatchToProps = {
-  newNote
+  newNote, hideModal
 };
 export default connect(
   mapStateToProps,
