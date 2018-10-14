@@ -1,3 +1,27 @@
 .App {
   margin: auto 1.5rem;
 }
+
+.add-note-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    margin: 1rem;
+  }
+
+
+}
+
+@media only screen and (min-width: 769px) {
+  .App {
+    margin: 1.25rem;
+  }
+
+  .add-note-button-container {
+    justify-content: flex-start;
+  }
+}

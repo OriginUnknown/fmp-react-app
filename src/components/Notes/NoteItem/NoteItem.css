@@ -14,3 +14,11 @@
 .sticky-note {
     min-height: 100px;
 }
+
+@media only screen and (max-width: 768px) {
+    .note-item-container {
+        margin: 16px 0;
+        max-width: none;
+        width: 100%;
+    }
+  }
