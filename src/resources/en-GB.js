@@ -4,8 +4,10 @@ const APP_CONST = {
             title: "My Notes..."
         }
     },
-    TEST: {
-        MESSAGE: "Yey! I'm using react!!"
+    HOME: {
+        BUTTONS: {
+            ADD_NOTE: "Add note..."
+        }
     }
 }
 
