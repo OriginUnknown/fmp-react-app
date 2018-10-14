@@ -7,6 +7,7 @@ import {
 
 const initialState = {
     notes: [],
+    selectedNote: null,
     modal: {
         contentKey: null
     },
