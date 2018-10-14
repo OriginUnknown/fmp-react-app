@@ -1,0 +1,9 @@
+.preview-button-container {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #CCC;
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
+    border-top: 1px solid #CCC;
+    margin-top: 2.5rem;
+}

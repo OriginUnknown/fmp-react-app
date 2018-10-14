@@ -1,7 +1,8 @@
 import {
     NEW_NOTE,
     HIDE_MODAL,
-    NOTE_ADDED
+    NOTE_ADDED,
+    VIEW_NOTE
 } from './actions/NoteList.actions';
 
 const initialState = {
@@ -46,6 +47,17 @@ export function reducer(state = initialState, action) {
                 notes: [...state.notes, action.newNote],
                 modal: newModalState,
                 showModal: false
+              }
+        }
+        case VIEW_NOTE: {
+            let newModalState = {
+                ...state.modal,
+                contentKey: action.type
+            };
+            return {
+                ...state,
+                modal: newModalState,
+                showModal: true
               }
         }
         default:

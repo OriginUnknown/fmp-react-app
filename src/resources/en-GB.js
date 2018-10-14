@@ -25,7 +25,16 @@ const APP_CONST = {
                         cancel: "Cancel"
                     }
                 }
-              }
+              },
+              VIEW_NOTE: {
+                title: "View existing note...",
+                description: "Remember, you can always update your note.",
+                notepad: {
+                    buttons: {
+                        cancel: "Cancel"
+                    }
+                }
+              },
         },
         NOTE_LIST: {
             NOTE: {
