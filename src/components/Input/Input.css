@@ -1,0 +1,13 @@
+label {
+    text-align: right;
+    width: 110px;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+input {
+    width: 60%;
+    padding: .625rem;
+    outline: none;
+    border: 1px solid #CCC;
+}

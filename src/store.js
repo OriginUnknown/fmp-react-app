@@ -1,6 +1,7 @@
 import {
     NEW_NOTE,
-    HIDE_MODAL
+    HIDE_MODAL,
+    NOTE_ADDED
 } from './actions/NoteList.actions';
 
 const initialState = {
@@ -14,24 +15,36 @@ const initialState = {
 export function reducer(state = initialState, action) {
     switch(action.type) {
         case NEW_NOTE: {
-            let newModalObj = {
+            let newModalState = {
                 ...state.modal,
                 contentKey: action.type
             };
             return {
                 ...state,
                 showModal: true,
-                modal: newModalObj
+                modal: newModalState
               }
         }
         case HIDE_MODAL: {
-            let newModalObj = {
+            let newModalState = {
                 ...state.modal,
                 contentKey: null
             };
             return {
                 ...state,
-                modal: newModalObj,
+                modal: newModalState,
+                showModal: false
+              }
+        }
+        case NOTE_ADDED: {
+            let newModalState = {
+                ...state.modal,
+                contentKey: null
+            };
+            return {
+                ...state,
+                notes: [...state.notes, action.newNote],
+                modal: newModalState,
                 showModal: false
               }
         }

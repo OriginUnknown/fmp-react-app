@@ -1,7 +1,5 @@
 import React from 'react';
-
-// prep for later
-// import './Button.css';
+import './Button.css';
 
 const buttonItem = props => {
     let buttonType = props.buttonType || "submit";

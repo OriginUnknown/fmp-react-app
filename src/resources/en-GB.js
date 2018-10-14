@@ -27,6 +27,13 @@ const APP_CONST = {
                 }
               }
         },
+        NOTE_LIST: {
+            NOTE: {
+                BUTTONS: {
+                    VIEW_NOTE: "View Note..."
+                }
+            }
+        },
         BUTTONS: {
             ADD_NOTE: "Add note..."
         }
